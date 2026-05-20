@@ -81,9 +81,6 @@ lerna-debug.log*
 debug/
 *.trace
 
-# Manus debug logs (Vite plugin)
-.manus-logs/
-
 # =============================================================================
 # TEMPORARY & CACHE FILES
 # =============================================================================
@@ -213,6 +210,3 @@ temp/
 
 # Webdev artifacts (checkpoint zips, migrations, etc.)
 .webdev/
-
-# Manus version file (auto-generated, not part of source)
-client/public/__manus__/version.json

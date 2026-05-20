@@ -14,7 +14,7 @@ SyntraCore-site/
 │       │   ├── sections/       # Seções (Hero, Services, Portfolio, etc)
 │       │   ├── ui/             # shadcn/ui components
 │       │   ├── ErrorBoundary.tsx
-│       │   └── ManusDialog.tsx
+│       │   └── AuthDialog.tsx
 │       ├── contexts/           # React Context (ThemeContext)
 │       ├── hooks/              # Custom hooks (useMobile)
 │       ├── lib/                # Utilitários e helpers

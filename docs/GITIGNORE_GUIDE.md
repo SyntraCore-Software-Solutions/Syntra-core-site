@@ -64,7 +64,6 @@ Cada desenvolvedor usa suas próprias configurações de editor.
 |---------|--------|
 | `logs/` | Arquivos de log |
 | `*.log` | Todos os .log files |
-| `.manus-logs/` | Debug logs do Vite plugin Manus |
 
 Logs contêm informações temporárias e às vezes dados sensíveis.
 
@@ -123,7 +122,6 @@ Arquivos de sistema que mudam conforme você navega.
 ├── node_modules/
 ├── dist/
 ├── .env.local
-├── .project-config.json  ← NUNCA!
 └── .vscode/
 ```
 
@@ -131,12 +129,11 @@ Arquivos de sistema que mudam conforme você navega.
 
 ## 🔧 Como Usar
 
-### Caso 1: Você acidentalmente commitou `.env` ou `.project-config.json`
+### Caso 1: Você acidentalmente commitou `.env`
 
 ```bash
 # Remove do Git (mas mantém localmente)
 git rm --cached .env
-git rm --cached .project-config.json
 
 # Commit
 git commit -m "Remove sensitive files from Git"
@@ -162,7 +159,7 @@ git commit -m "Add meu-arquivo-secreto to gitignore"
 
 ## 🚨 Boas Práticas
 
-1. **Nunca commite `.project-config.json`** — tem credenciais AWS
+1. **Nunca commite `.env`** — tem variáveis sensíveis
 2. **Use `.env.example`** para exemplo de variáveis (sem valores reais)
 3. **Mantenha `pnpm-lock.yaml` commitado** (para reproducibilidade)
 4. **Adicione `.env.local` ao seu `.gitignore`** pessoal se necessário
