@@ -85,7 +85,7 @@ export function Portfolio() {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag: string) => (
                     <span
                       key={tag}
                       className="inline-block px-2 py-1 text-xs rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"

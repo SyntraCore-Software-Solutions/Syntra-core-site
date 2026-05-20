@@ -4,23 +4,19 @@ import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ContactFormData } from '@/types';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { useState } from 'react';
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<ContactFormData>({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
     defaultValues: {
       name: '',
       email: '',
-      projectType: 'site',
       message: '',
     },
   });
-
-  const projectType = watch('projectType');
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -205,26 +201,6 @@ export function Contact() {
             </div>
 
             {/* Project Type */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Tipo de projeto
-              </label>
-              <Select defaultValue="site" onValueChange={(value) => {
-                // Update form value
-              }}>
-                <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
-                  <SelectValue placeholder="Selecione um tipo" />
-                </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700">
-                  <SelectItem value="site">Site / Landing Page</SelectItem>
-                  <SelectItem value="sistema">Sistema Web</SelectItem>
-                  <SelectItem value="app">Aplicativo Mobile</SelectItem>
-                  <SelectItem value="automacao">Automação</SelectItem>
-                  <SelectItem value="outro">Outro</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
             {/* Message */}
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
