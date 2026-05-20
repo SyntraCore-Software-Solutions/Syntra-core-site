@@ -10,11 +10,12 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+  // Serve static files from dist/public
+  // __dirname is the directory where dist/index.js is located (dist/)
+  // So public assets are always at __dirname/public
+  const staticPath = path.join(__dirname, "public");
+
+  console.log(`Serving static files from: ${staticPath}`);
 
   app.use(express.static(staticPath));
 
