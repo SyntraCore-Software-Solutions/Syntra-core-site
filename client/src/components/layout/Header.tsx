@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
@@ -35,8 +35,8 @@ export function Header() {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Code2 size={20} className="text-white" strokeWidth={2.5} />
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src="/logo.svg" alt="SyntraCore" className="w-full h-full object-contain" />
             </div>
             <span className="text-xl font-bold text-white hidden sm:inline" style={{ fontFamily: 'Syne' }}>
               SyntraCore
