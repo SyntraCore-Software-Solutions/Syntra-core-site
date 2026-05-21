@@ -39,7 +39,7 @@ export function Header() {
               <span className="text-white font-bold">NC</span>
             </div>
             <span className="text-xl font-bold text-white hidden sm:inline" style={{ fontFamily: 'Syne' }}>
-              NovaCore's
+              SyntraCore
             </span>
           </motion.div>
 
