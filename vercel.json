@@ -1,11 +1,10 @@
 {
   "buildCommand": "pnpm build",
-  "outputDirectory": "dist",
-  "public": "dist/public",
-  "rewrites": [
+  "outputDirectory": "dist/public",
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/api"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
