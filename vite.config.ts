@@ -5,31 +5,26 @@ import path from "node:path";
 import { defineConfig } from "vite";
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin()];
-const rootDir = process.cwd();
 
 export default defineConfig({
   plugins,
   base: "/",
   resolve: {
     alias: {
-      "@": path.join(rootDir, "client", "src"),
-      "@shared": path.join(rootDir, "shared"),
-      "@assets": path.join(rootDir, "attached_assets"),
+      "@": path.resolve("client/src"),
+      "@shared": path.resolve("shared"),
+      "@assets": path.resolve("attached_assets"),
     },
   },
-  root: path.join(rootDir, "client"),
+  root: "client",
   build: {
-    outDir: path.join(rootDir, "dist", "public"),
+    outDir: path.resolve("dist/public"),
     emptyOutDir: true,
   },
   server: {
     port: 3000,
     strictPort: false,
     host: true,
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
   },
 });
 
